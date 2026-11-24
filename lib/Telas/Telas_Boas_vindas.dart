@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// 👇 Importa a tela de login (Verifique se a pasta é 'Telas' com T maiúsculo)
+import 'Tela_login.dart'; 
 
 class TelasBoasVindas extends StatelessWidget {
   const TelasBoasVindas({super.key});
@@ -20,7 +22,7 @@ class TelasBoasVindas extends StatelessWidget {
             ),
           ),
 
-          // 2. CAMADA ESCURA (Para dar o clima e destacar o conteúdo)
+          // 2. CAMADA ESCURA
           Container(
             width: double.infinity,
             height: double.infinity,
@@ -34,7 +36,15 @@ class TelasBoasVindas extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // 👇 AQUI ESTÁ O COMANDO DE NAVEGAÇÃO CORRIGIDO
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const TelaLogin(),
+                      ),
+                    );
+                  },
                   style: TextButton.styleFrom(
                     foregroundColor: const Color(0xFFD4AF37),
                   ),
@@ -50,7 +60,7 @@ class TelasBoasVindas extends StatelessWidget {
             ),
           ),
 
-          // 4. CONTEÚDO CENTRAL (Tesoura, Título, Fotos e Botão)
+          // 4. CONTEÚDO CENTRAL
           Center(
             child: SingleChildScrollView(
               padding: const EdgeInsets.all(24),
